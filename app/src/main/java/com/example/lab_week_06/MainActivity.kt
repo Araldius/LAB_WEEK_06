@@ -58,6 +58,55 @@ class MainActivity : AppCompatActivity() {
                     "Curious George",
                     "Award winning investigator",
                     "https://cdn2.thecatapi.com/images/bar.jpg"
+                ),
+                CatModel(
+                    Gender.Female,
+                    CatBreed.AmericanCurl,
+                    "Luna",
+                    "Loves to nap in sunbeams",
+                    "https://cdn2.thecatapi.com/images/5kl.jpg"
+                ),
+                CatModel(
+                    Gender.Male,
+                    CatBreed.ExoticShorthair,
+                    "Oliver",
+                    "Expert at finding snacks",
+                    "https://cdn2.thecatapi.com/images/9j5.jpg"
+                ),
+                CatModel(
+                    Gender.Male,
+                    CatBreed.BalineseJavanese,
+                    "Simba",
+                    "Majestic and proud leader",
+                    "https://cdn2.thecatapi.com/images/fWbeAxpQH.jpg"
+                ),
+                CatModel(
+                    Gender.Female,
+                    CatBreed.AmericanCurl,
+                    "Bella",
+                    "Playful and full of energy",
+                    "https://cdn2.thecatapi.com/images/zeKI28A21.jpg"
+                ),
+                CatModel(
+                    Gender.Male,
+                    CatBreed.ExoticShorthair,
+                    "Max",
+                    "A true couch potato",
+                    "https://cdn2.thecatapi.com/images/KJF8fB_20.jpg"
+                ),
+                CatModel(
+                    Gender.Female,
+                    CatBreed.BalineseJavanese,
+                    "Chloe",
+                    "Graceful and very vocal",
+                    "https://cdn2.thecatapi.com/images/aU69p2mTT.jpg"
+                ),
+                CatModel(
+                    Gender.Unknown,
+                    CatBreed.AmericanCurl,
+                    "Smokey",
+                    "Mysterious and a bit aloof",
+                    "https://cdn2.thecatapi.com/images/k71ULYfRr.jpg"
                 )
             )
         )
