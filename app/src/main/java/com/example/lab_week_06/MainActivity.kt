@@ -2,6 +2,7 @@ package com.example.lab_week_06
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lab_week_06.model.CatBreed
@@ -13,20 +14,21 @@ class MainActivity : AppCompatActivity() {
         findViewById(R.id.recycler_view)
     }
     private val catAdapter by lazy {
-        CatAdapter(layoutInflater, GlideImageLoader(this))
+        // Pass the OnClickListener implementation to the adapter
+        CatAdapter(layoutInflater, GlideImageLoader(this), object : CatAdapter.OnClickListener {
+            override fun onItemClick(cat: CatModel) {
+                showSelectionDialog(cat)
+            }
+        })
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //Setup the adapter
         recyclerView.adapter = catAdapter
-
-        //Setup the Layout manager
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
-        //Add data to the adapter
         catAdapter.setData(
             listOf(
                 CatModel(
@@ -52,5 +54,14 @@ class MainActivity : AppCompatActivity() {
                 )
             )
         )
+    }
+
+    // This function creates and shows the pop-up dialog
+    private fun showSelectionDialog(cat: CatModel) {
+        AlertDialog.Builder(this)
+            .setTitle("Cat Selected")
+            .setMessage("You have selected cat ${cat.name}")
+            .setPositiveButton("OK") { _, _ -> }
+            .show()
     }
 }
